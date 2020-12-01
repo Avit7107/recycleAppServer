@@ -39,13 +39,13 @@ const HomeScreen = ({ match }) => {
   useEffect(() => {
     disptach(ProductsRequest());
   }, []);
-  const sendCartToServer = (username, cartItems) => {
-    if (username) {
-      Axios.post("/api/setcart", { username, cartItems }).then((res) => {
-        console.log(res);
-      });
-    }
-  };
+  // const sendCartToServer = (username, cartItems) => {
+  //   if (username) {
+  //     Axios.post("/api/setcart", { username, cartItems }).then((res) => {
+  //       console.log(res);
+  //     });
+  //   }
+  // };
 
  
   return (

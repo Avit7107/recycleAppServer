@@ -14,7 +14,7 @@ import axios from "axios";
 
 const Login = () => {
   const SignInFn = (z) => {
-    axios.post("http://localhost:5000/login", z).then((res) => {
+    axios.post("api/login", z).then((res) => {
       console.log(res);
     });
   };
