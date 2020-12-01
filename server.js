@@ -1,4 +1,5 @@
 const express = require("express");
+const path = require("path");
 const cors = require("cors");
 const dotenv = require("dotenv");
 const connectDB = require("./dbConnection");
@@ -12,21 +13,28 @@ const app = express();
 app.use(bodyParser.json());
 
 app.use(cors());
+app.use(cors({ credentials: true, origin: "http://localhost:3000" }));
 dotenv.config();
+app.use(express.static(path.join(__dirname, "client/build")));
 
+const PREFIX = "/api";
+
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname+'/client/build/index.html'));
+});
 connectDB();
 const http = require("http");
 const { db } = require("./Models/productModel");
 const server = http.createServer(app);
 
 
-app.get("/products", async (req, res) => {
+app.get(`${PREFIX}/products`, async (req, res) => {
   const productsFromDB = await Product.find({});
   console.log(productsFromDB)
   res.send(productsFromDB);
  
 });
-app.get("/products/:category", async (req, res) => {
+app.get(`${PREFIX}/products/:category`, async (req, res) => {
   console.log(req.params.category);
   let products = await Product.find({ category: req.params.category });
   console.log(products);
@@ -34,7 +42,7 @@ app.get("/products/:category", async (req, res) => {
   res.status(200).send(products);
 });
 
-app.post("/newProduct", async (req, res) => {
+app.post(`${PREFIX}/newProduct`, async (req, res) => {
   console.log(req.body.newProduct);
   const product = await Product.create(req.body.newProduct);
 
@@ -45,7 +53,7 @@ app.post("/newProduct", async (req, res) => {
 
 
 
-app.put("/updateproduct", async (req, res) => {
+app.put(`${PREFIX}/updateproduct`, async (req, res) => {
   try {
     await Product.deleteMany();
     Product.insertMany(req.body.products);
@@ -60,7 +68,7 @@ app.put("/updateproduct", async (req, res) => {
 });
 
 
-app.delete("/removeproduct/:id", async (req, res) => {
+app.delete(`${PREFIX}/removeproduct/:id`, async (req, res) => {
   try {
     console.log(req.params);
     await Product.findOneAndDelete({ _id: req.params.id });
@@ -74,12 +82,12 @@ app.delete("/removeproduct/:id", async (req, res) => {
 
 
 
-app.delete("/deleteProduct", async (req, res) => {
+app.delete(`${PREFIX}/deleteProduct`, async (req, res) => {
   const product = Product.findOneAndDelete({});
   product.save();
 });
 
-app.post("/setcart", async (req, res) => {
+app.post(`${PREFIX}/setcart`, async (req, res) => {
   console.log(req.body);
   console.log(req.body.username);
   const user = await User.find({ username: req.body.username });
@@ -111,7 +119,7 @@ app.post("/setcart", async (req, res) => {
 
 //create user
 
-app.post("/login", async (req, res) => {
+app.post(`${PREFIX}/login`, async (req, res) => {
   console.log("new user", req.body);
   await User.create(req.body);
   const users = await User.find({});
@@ -119,9 +127,8 @@ app.post("/login", async (req, res) => {
   res.send(users);
 });
 
-//log in , check if an admin logged in if he does send to client that he did to enable admin funcions on client side
 
-app.post("/login", async (req, res) => {
+app.post(`${PREFIX}/login`, async (req, res) => {
   console.log(req.body);
   const user = await User.findOne({
     username: req.body.username,
@@ -160,7 +167,7 @@ app.post("/login", async (req, res) => {
 });
 
 
-app.post("/updateuser", async (req, res) => {
+app.post(`${PREFIX}/updateuser`, async (req, res) => {
   console.log(req.body);
   const user = await User.findOneAndUpdate(
     { username: req.body.userData.username },

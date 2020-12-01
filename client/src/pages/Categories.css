@@ -1,0 +1,26 @@
+@import "~bootstrap/scss/bootstrap";
+.heroSection {
+    height: 100vh;
+  }
+  .heroSectionBackground {
+    height: 100vh;
+    background: url("../images/50.jpg");
+    background-size: cover;
+    filter: brightness(70%);
+  }
+  .heroSectionText h1,
+  p {
+    margin: 0.75rem -20rem;
+  
+    text-align: right;
+  }
+  .inputHeroSearch {
+    margin: 0.75rem -20rem;
+    display: block;
+  }
+  .inputHeroSearch input {
+    margin: 0 0.2rem;
+  }
+  label {
+    display: block;
+  }
