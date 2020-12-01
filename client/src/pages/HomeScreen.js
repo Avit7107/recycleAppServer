@@ -41,7 +41,7 @@ const HomeScreen = ({ match }) => {
   }, []);
   const sendCartToServer = (username, cartItems) => {
     if (username) {
-      Axios.post("/setcart", { username, cartItems }).then((res) => {
+      Axios.post("/api/setcart", { username, cartItems }).then((res) => {
         console.log(res);
       });
     }
