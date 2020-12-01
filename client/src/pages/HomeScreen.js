@@ -39,13 +39,13 @@ const HomeScreen = ({ match }) => {
   useEffect(() => {
     disptach(ProductsRequest());
   }, []);
-  // const sendCartToServer = (username, cartItems) => {
-  //   if (username) {
-  //     Axios.post("/api/setcart", { username, cartItems }).then((res) => {
-  //       console.log(res);
-  //     });
-  //   }
-  // };
+  const sendCartToServer = (username, cartItems) => {
+    if (username) {
+      Axios.post("http://localhost:5000/setcart", { username, cartItems }).then((res) => {
+        console.log(res);
+      });
+    }
+  };
 
  
   return (
@@ -53,7 +53,7 @@ const HomeScreen = ({ match }) => {
     
     <Row>
     {products.map((product) => (
-      <Col key={product._id} sm={8} md={6} lg={4} xl={3}>
+      <Col key={product._id} sm={6} md={4} lg={3} xl={2}>
         <Product product={product} />
         <Button
               onClick={() => dispatch(AddItemToCart(quantity, product))}

@@ -80,11 +80,66 @@ app.delete(`${PREFIX}/removeproduct/:id`, async (req, res) => {
 });
 
 
+app.post(`${PREFIX}/login`, async (req, res) => {
+  console.log(req.body);
+  const user = await User.findOne({
+    username: req.body.username,
+    password: req.body.password,
+  });
+  console.log(user);
+  console.log(user._id);
+  const cart = await Cart.findOne({ userID: user._id });
 
-app.delete(`${PREFIX}/deleteProduct`, async (req, res) => {
-  const product = Product.findOneAndDelete({});
-  product.save();
+  if (user && user.isAdmin === true) {
+    res.send({
+      loginSucces: true,
+      isAdmin: true,
+      userData: {
+        username: user.username,
+        email: user.email,
+        address: user.address,
+      },
+      cart: cart,
+    });
+  } else if (user && user.isAdmin === false) {
+    res.send({
+      loginSucces: true,
+      isAdmin: false,
+      userData: {
+        username: user.username,
+        email: user.email,
+        address: user.address,
+      },
+      cart: cart,
+    });
+  } else {
+    res.send({ loginSucces: false, isAdmin: false });
+  }
+  io.sockets.emit("login", "login just happend !");
 });
+
+//update user
+app.post(`${PREFIX}/updateuser`, async (req, res) => {
+  console.log(req.body);
+  const user = await User.findOneAndUpdate(
+    { username: req.body.userData.username },
+    {
+      username: req.body.userData.username,
+      email: req.body.userData.email,
+      address: req.body.userData.address,
+    },
+    {
+      new: true,
+    }
+  );
+  console.log("updated user:", user);
+  res.send("ok");
+  // user.email = req.body.email;
+  // user.adress = req.body.adress;
+  // user.save();
+});
+
+//set cart
 
 app.post(`${PREFIX}/setcart`, async (req, res) => {
   console.log(req.body);
@@ -108,88 +163,17 @@ app.post(`${PREFIX}/setcart`, async (req, res) => {
 
   const updatedCart = await Cart.find({ userID: userID });
 
+  // console.log(user[0]._id);
+  // req.body.cartItems.map((item) => console.log(item));
   res.send(updatedCart[0]);
 });
-
-
-
-
-
-
-//create user
-
-app.post(`${PREFIX}/login`, async (req, res) => {
-  console.log("new user", req.body);
-  await User.create(req.body);
-  const users = await User.find({});
-
-  res.send(users);
-});
-
-
-app.post(`${PREFIX}/login`, async (req, res) => {
-  console.log(req.body);
-  const user = await User.findOne({
-    username: req.body.username,
-    password: req.body.password,
-  });
-  console.log(user);
-  console.log(user._id);
-  const cart = await Cart.findOne({ userID: user._id });
-
-  if (user && user.isAdmin === true) {
-    res.send({
-      loginSucces: true,
-      isAdmin: true,
-      userData: {
-        username: user.username,
-        email: user.email,
-        PhoneNumber: user.PhoneNumber,
-      },
-      cart: cart,
-    });
-  } else if (user && user.isAdmin === false) {
-    res.send({
-      loginSucces: true,
-      isAdmin: false,
-      userData: {
-        username: user.username,
-        email: user.email,
-        PhoneNumber: user.PhoneNumber,
-      },
-      cart: cart,
-    });
-  } else {
-    res.send({ loginSucces: false, isAdmin: false });
-  }
-
-});
-
-
-app.post(`${PREFIX}/updateuser`, async (req, res) => {
-  console.log(req.body);
-  const user = await User.findOneAndUpdate(
-    { username: req.body.userData.username },
-    {
-      username: req.body.userData.username,
-      email: req.body.userData.email,
-      PhoneNumber: req.body.userData.PhoneNumber,
-    },
-    {
-      new: true,
-    }
-  );
-  console.log("updated user:", user);
-  res.send("ok");
-  user.email = req.body.email;
-  user.PhoneNumber = req.body.PhoneNumber;
-  user.save();
-})
-
 
 server.listen(process.env.PORT || 5000, () => {
   console.log(`server listening on port ${process.env.PORT}`);
 });
+
+
+
 
 
 

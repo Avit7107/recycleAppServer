@@ -2,7 +2,7 @@ import axios from "axios";
 
 export const ProductsRequest = () => async (dispatch) => {
   try {
-    const  {data}  = await axios.get("/api/products");
+    const  {data}  = await axios.get("api/products");
 
     dispatch({
       type: "PRODUCTS_REQUEST_SUCCESS",
