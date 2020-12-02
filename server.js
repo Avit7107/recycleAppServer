@@ -15,7 +15,7 @@ app.use(bodyParser.json());
 app.use(cors());
 dotenv.config();
 app.use(express.static(path.join(__dirname, "client/build")));
-
+app.use('/', express.static('client'));
 const PREFIX = "/api";
 
 app.get('*', (req, res) => {
@@ -167,7 +167,6 @@ app.post(`${PREFIX}/setcart`, async (req, res) => {
   // req.body.cartItems.map((item) => console.log(item));
   res.send(updatedCart[0]);
 });
-
 server.listen(process.env.PORT || 5000, () => {
   console.log(`server listening on port ${process.env.PORT}`);
 });
