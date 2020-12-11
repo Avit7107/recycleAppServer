@@ -16,13 +16,13 @@ function NavBar( props) {
   }, [])
     return (
         <header>
-          <div className=" overlay jumbotron"></div>
-         <nav className="navbar navbar-inverse">
-           <div className="navbar-header">
+            <div className="overlay"></div>
+            <nav>
+            <div className="navbar-header">
            <a  className="navbar-brand" href="#"> giveItOn </a>
            </div>
-           <ul className="nav navbar-nav">
-             <li className="active"><Link to="/">עמוד הבית</Link></li>
+            <ul>
+            <li className="active"><Link to="/">עמוד הבית</Link></li>
              <li><Link to="/WomenClothing">בגדי נשים</Link></li>
              <li><Link to="/MenClothing">בגדי גברים</Link></li>
              <li><Link to="/food">אוכל</Link></li>
@@ -36,11 +36,11 @@ function NavBar( props) {
              </Link>
             </li>
            </ul>
-         </nav>
-        </header>
-     
+            </nav>
+      </header>
     );
-  }
+}
+  
   export default NavBar;
 //         if (res.data.cart) {
 //           console.log("cartitems : ", res.data.cart.cartItems);
