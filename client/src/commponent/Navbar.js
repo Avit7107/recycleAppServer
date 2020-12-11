@@ -8,6 +8,11 @@ import { Link} from 'react-router-dom';
 import { RemoveItemFromCart, AddItemToCart, SetExistingCart} from '../actions/cartAction';
 import { useDispatch, useSelector } from "react-redux";
 import Search from './search'
+import './navbar.css'
+
+
+
+
 function NavBar( props) {
   console.log( props);
   let cartItems = useSelector((state) => state.cartReducer.cartItems);
@@ -16,11 +21,15 @@ function NavBar( props) {
   }, [])
     return (
         <header>
-            <div className="overlay"></div>
-            <nav>
-            <div className="navbar-header">
-           <a  className="navbar-brand" href="#"> giveItOn </a>
+            <div className="text-box">
+            <h1 class="heading-primary">
+                <span class="heading-primary-main">GiveItOn</span>
+                <span class="heading-primary-sab">give and let life happen</span>
+ 
+            </h1>
+           <div class="btn btn-white btn-animted"><Link to="/admin">הוסף מוצר</Link> </div>
            </div>
+            <nav>
             <ul>
             <li className="active"><Link to="/">עמוד הבית</Link></li>
              <li><Link to="/WomenClothing">בגדי נשים</Link></li>
@@ -42,17 +51,3 @@ function NavBar( props) {
 }
   
   export default NavBar;
-//         if (res.data.cart) {
-//           console.log("cartitems : ", res.data.cart.cartItems);
-
-//           dispatch(SetExistingCart(res.data.cart.cartItems));
-//         }
-//       }
-//   const sendCartToServer = (username, cartItems) => {
-//     Axios.post("/setcart", { username, cartItems }).then((res) => {
-//       console.log(res);
-//     });
-//   };
-//   useEffect(() => {
-//     sendCartToServer(username, cartItems);
-//   }, [cartItems]);
