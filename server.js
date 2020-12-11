@@ -18,9 +18,7 @@ app.use(express.static(path.join(__dirname, "client/build")));
 app.use('/', express.static('client'));
 const PREFIX = "/api";
 
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname+'/client/build/index.html'));
-});
+
 connectDB();
 const http = require("http");
 const { db } = require("./Models/productModel");
@@ -166,6 +164,9 @@ app.post(`${PREFIX}/setcart`, async (req, res) => {
   // console.log(user[0]._id);
   // req.body.cartItems.map((item) => console.log(item));
   res.send(updatedCart[0]);
+});
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname+'/client/build/index.html'));
 });
 server.listen(process.env.PORT || 5000, () => {
   console.log(`server listening on port ${process.env.PORT}`);
