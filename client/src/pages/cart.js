@@ -52,9 +52,9 @@ const Cart = ({ history }) => {
           ))}
         </tbody>
       </Table>
-      <div style={{ display: "flex", float: "right", padding: "2rem" }}>
+      <div className="basketTotal" style={{ display: "flex", float: "right", padding: "2rem" }}>
         <h4 style={{ textAlign: "right", margin: "2rem" }}>
-          total price : $
+          total price : שח
           {cartItems
             .map((cartItem) => +cartItem.product.price * cartItem.quantity)
             .reduce((acc, item) => acc + item, 0)}
