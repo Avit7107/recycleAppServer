@@ -16,9 +16,6 @@ import './navbar.css'
 function NavBar( props) {
   console.log( props);
   let cartItems = useSelector((state) => state.cartReducer.cartItems);
-  useEffect(() => {
-   getNumbers();
-  }, [])
     return (
         <header>
             <div className="text-box">
