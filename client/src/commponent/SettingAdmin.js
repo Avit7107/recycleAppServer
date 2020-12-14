@@ -8,6 +8,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link, Redirect, withRouter } from "react-router-dom";
 import { Settinguser } from "./settingUser";
 import { SetExistingCart } from "../actions/cartAction";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {

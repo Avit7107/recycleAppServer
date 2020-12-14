@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { Card } from 'react-bootstrap'
 import { ProductsRequest } from '../actions/productAction';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Product = ({ product }) => {
   return (
