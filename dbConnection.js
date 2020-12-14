@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const url = process.env.MONGO_URI || "mongodb://localhost:27017";;
+const url = process.env.MONGO_URI;
 mongoose.set('useNewUrlParser', true);
 mongoose.set('useUnifiedTopology', true);
 
