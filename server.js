@@ -113,7 +113,7 @@ app.post(`${PREFIX}/login`, async (req, res) => {
   } else {
     res.send({ loginSucces: false, isAdmin: false });
   }
-  io.sockets.emit("login", "login just happend !");
+ 
 });
 
 //update user
@@ -132,9 +132,9 @@ app.post(`${PREFIX}/updateuser`, async (req, res) => {
   );
   console.log("updated user:", user);
   res.send("ok");
-  // user.email = req.body.email;
-  // user.adress = req.body.adress;
-  // user.save();
+  user.email = req.body.email;
+  user.adress = req.body.adress;
+  user.save();
 });
 
 //set cart

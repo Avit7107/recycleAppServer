@@ -13,7 +13,6 @@ const products = [
     "id": 2,
     "name": " חדש לא נלבש-נעל מידה 43",
     "image": "https://fgl.scene7.com/is/image/FGLSportsLtd/FGL_332979914_01_a?bgColor=0,0,0,0&fmt=png-alpha&hei=520&resMode=sharp2&op_sharpen=1",
-    "quantity": 3,
     "price": 20 ,
     "countInStock": 1,
     "description": "משפחת קרת",
@@ -22,7 +21,6 @@ const products = [
     "id": 3,
     "name": "כפפות קורונה חצי חבילה",
     "image": "https://ae01.alicdn.com/kf/Hf487886100c64015be6eece6eeb5a81c3/20Pcs-Lot-Disposable-Gloves-Latex-Cleaning-Food-Gloves-Universal-Household-Garden-Cleaning-Gloves-Home-Cleaning-Rubber.jpg",
-    "quantity": 2,
     "price": 5,
     "countInStock": 1,
     "description": "משפחת כהן",
@@ -31,7 +29,7 @@ const products = [
     "id": 4,
     "name":"קרונפלקס לא נפתח",
     "image": "https://images.kglobalservices.com/www.kelloggs.co.nz/en_nz/product/product_449/prod_img-198128_kelloggs-corn-flakes.png",
-    "quantity": 9,
+    
     "price": 7,
     "countInStock": 1,
     "description": "משפחת סופר",
@@ -40,7 +38,7 @@ const products = [
     "id": 5,
     "name": "טיולון משומש ",
     "image": "https://trendy.co.il/wp-content/uploads/2019/04/black.jpg",
-    "quantity": 3,
+  
     "price": 0,
     "countInStock": 1,
     "description": "משפחת צנעני",
@@ -49,7 +47,7 @@ const products = [
     "id": 6,
     "name":"שוקולד לוקאר חלב נוכרי",
     "image": "https://res.cloudinary.com/nassau-candy/image/upload/c_fit,w_300,h_300,f_auto/v1548183621/924279.jpg",
-    "quantity": 1,
+
     "price": 0,
     "countInStock": 1,
     "description":"משפחת פרץ",

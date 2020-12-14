@@ -6,13 +6,12 @@ const cartSchema = mongoose.Schema(
     userID: { type: String },
     cartItems: [
       {
-        quantity: { type: Number },
+        countInStock: { type: Number },
         product: {
           name: { type: String },
           price: { type: Number },
           image: { type: String },
           category: { type: String },
-          description:{ type: String },
         },
       },
     ],
