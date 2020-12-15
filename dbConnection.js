@@ -1,7 +1,5 @@
 const mongoose = require("mongoose");
-const url = process.env.MONGO_URI;
-mongoose.set('useNewUrlParser', true);
-mongoose.set('useUnifiedTopology', true);
+const url = "mongodb+srv://avital:avital@cluster0.zx6rq.mongodb.net/datastore?retryWrites=true&w=majority";
 
 const connectDB = async () => {
   try {
