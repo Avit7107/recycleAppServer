@@ -32,8 +32,6 @@ function NavBar( props) {
              <li><Link to="/WomenClothing">בגדי נשים</Link></li>
              <li><Link to="/MenClothing">בגדי גברים</Link></li>
              <li><Link to="/food">אוכל</Link></li>
-             <li><Link to="/Other">דברים אחרים</Link></li>
-             <li><Link to="/admin">הוסף מוצר</Link></li>
              <li><Link to="/login">הרשם</Link></li>
              <li className="cart"><Link to= "/cart">
              <ion-icon name="basket"></ion-icon> סל המוצרים 
