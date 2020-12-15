@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import Navbar from "../../components/Navbar";
+import Navbar from "./Navbar";
 import { Table, FormControl, Form, Button, Modal } from "react-bootstrap";
 import Axios from "axios";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEdit, faTrash } from "@fortawesome/free-solid-svg-icons";
-import { ProductsRequest } from "../../actions/ProductAction";
+import { ProductsRequest } from "../actions/productAction";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Admin = () => {
