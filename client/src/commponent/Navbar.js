@@ -18,29 +18,23 @@ function NavBar( props) {
   let cartItems = useSelector((state) => state.cartReducer.cartItems);
     return (
         <header>
-            <div className="text-box">
-            <h1 class="heading-primary">
-                <div class="heading-primary-main">GiveItOn</div>
-                <div class="heading-primary-sab">give and let life happen</div>
-            </h1>
-        <Button variant="primary" size="lg" active><Link to="/admin">הוסף מוצר</Link></Button>
-          <div class="btn btn-white btn-animted"> </div>
-          </div>
-          <Nav variant="pills" defaultActiveKey="/home">
-         <Nav.Item>
-         <Nav.Link ><Link to="/">עמוד הבית</Link>Active</Nav.Link>
-        </Nav.Item>
-         <Nav.Item>
-        <Nav.Link eventKey="link-1"><Link to="/login">הרשם</Link></Nav.Link>
-        </Nav.Item>
-        <Nav.Item>
-         <Nav.Link eventKey="link-2" disabled><Link to= "/cart">
+      <Navbar bg="dark" variant="dark">
+      <Navbar.Brand><Link to="/">GiveItOn</Link></Navbar.Brand>
+      <Nav className="mr-auto">
+      <Nav.Link ><Link to="/login">הרשם</Link></Nav.Link>
+      <Nav.Link ><Link to= "/cart">
          <ion-icon name="basket"></ion-icon> סל המוצרים 
            <a href="#"><span className="glyphicon glyphicon-search"></span></a> 
-           </Link> </Nav.Link>
-           </Nav.Item>
-           </Nav>
-
+           </Link></Nav.Link>
+      <Nav.Link ><Link to="/WomenClothing">בגדי נשים</Link></Nav.Link>
+      </Nav>
+      <Form inline>
+      <FormControl type="text" placeholder="Search" className="mr-sm-2" onClick={Search} />
+      <Button variant="outline-info">Search</Button>
+      </Form>
+      </Navbar>
+           <Button variant="primary" size="lg" active><Link to="/admin">הוסף מוצר</Link></Button>
+           <div class="btn btn-white btn-animted"> </div>
       </header>
     );
 }
@@ -64,3 +58,17 @@ function NavBar( props) {
 //   </li>
 //  </ul>
 //   </nav>
+{/* <Nav variant="pills" defaultActiveKey="/home">
+<Nav.Item>
+<Nav.Link ><Link to="/">עמוד הבית</Link>Active</Nav.Link>
+</Nav.Item>
+<Nav.Item>
+<Nav.Link eventKey="link-1"><Link to="/login">הרשם</Link></Nav.Link>
+</Nav.Item>
+<Nav.Item>
+<Nav.Link eventKey="link-2" disabled><Link to= "/cart">
+<ion-icon name="basket"></ion-icon> סל המוצרים 
+  <a href="#"><span className="glyphicon glyphicon-search"></span></a> 
+  </Link> </Nav.Link>
+  </Nav.Item>
+  </Nav> */}
