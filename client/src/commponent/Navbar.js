@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Navbar,Button ,
+import { Navbar,Button ,FormControl,Form,
   Nav} from 'react-bootstrap';
 import { connect } from 'react-redux';
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -13,7 +13,7 @@ import './navbar.css'
 
 
 
-function NavBar( props) {
+function NavBar({history}) {
   console.log( props);
   let cartItems = useSelector((state) => state.cartReducer.cartItems);
   const [keyword, setKeyword] = useState('')
