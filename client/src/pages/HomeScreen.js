@@ -59,7 +59,7 @@ const HomeScreen = ({ match }) => {
               onClick={() => dispatch(AddItemToCart(quantity, product))}
               className='btn btn-info'
             >
-              הוסף לסל
+                 הוסף לסל
             </Button>
       </Col>
     ))}

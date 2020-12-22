@@ -35,14 +35,16 @@ header {
     z-index: 2;
     display: flex;
     justify-content:center;
+    float:right;
+    align-content: center;
   }
   
 
-.cart ion-icon {
+   .cart ion-icon {
   vertical-align: bottom;
   font-size: 20px;
   padding-right: 5px;
-}
+    }
 .cart a{
   background-color: royalblue;
   color: #ffffff;
