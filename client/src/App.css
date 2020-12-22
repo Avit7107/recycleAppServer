@@ -61,3 +61,28 @@ header {
   padding: 10px;
   text-decoration: none;
 }
+
+  .btn:hover{
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0,0,0,.2);
+}
+  .btn:active{
+    transform: translateY(-1px);
+    box-shadow: 0 5px 10px rgba(0,0,0,.2);
+}
+.btn-white{
+    background-color: #fff;
+    color: #777777;
+}
+.btn::after{
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 100px;
+    position:absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all, 4s;
+}

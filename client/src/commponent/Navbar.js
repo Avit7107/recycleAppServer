@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Navbar,
+import { Navbar,Button ,
   Nav} from 'react-bootstrap';
 import { connect } from 'react-redux';
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -9,6 +9,7 @@ import { RemoveItemFromCart, AddItemToCart, SetExistingCart} from '../actions/ca
 import { useDispatch, useSelector } from "react-redux";
 import Search from './search'
 import './navbar.css'
+import '../app.css'
 
 
 
@@ -20,13 +21,29 @@ function NavBar( props) {
         <header>
             <div className="text-box">
             <h1 class="heading-primary">
-                <span class="heading-primary-main">GiveItOn</span>
-                <span class="heading-primary-sab">give and let life happen</span>
+                <div class="heading-primary-main">GiveItOn</div>
+                <div class="heading-primary-sab">give and let life happen</div>
  
             </h1>
+            <Button variant="primary" size="lg" active>
+                     Primary button
+               </Button>
            <div class="btn btn-white btn-animted"><Link to="/admin">הוסף מוצר</Link> </div>
            </div>
             <nav>
+              <Nav variant="pills" defaultActiveKey="/home">
+               <Nav.Item>
+                 <Nav.Link href="/home">Active</Nav.Link>
+              </Nav.Item>
+                <Nav.Item>
+               <Nav.Link eventKey="link-1">Option 2</Nav.Link>
+                   </Nav.Item>
+               <Nav.Item>
+                <Nav.Link eventKey="disabled" disabled>
+                         Disabled
+                             </Nav.Link>
+                       </Nav.Item>
+                        </Nav>
             <ul>
             <li className="active"><Link to="/">עמוד הבית</Link></li>
              <li><Link to="/WomenClothing">בגדי נשים</Link></li>
