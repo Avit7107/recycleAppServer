@@ -9,7 +9,6 @@ import { RemoveItemFromCart, AddItemToCart, SetExistingCart} from '../actions/ca
 import { useDispatch, useSelector } from "react-redux";
 import Search from './search'
 import './navbar.css'
-import '../app.css'
 
 
 
