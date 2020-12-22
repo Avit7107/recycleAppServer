@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useState } from 'react';
 import { Navbar,Button ,
   Nav} from 'react-bootstrap';
 import { connect } from 'react-redux';
@@ -16,6 +16,16 @@ import './navbar.css'
 function NavBar( props) {
   console.log( props);
   let cartItems = useSelector((state) => state.cartReducer.cartItems);
+  const [keyword, setKeyword] = useState('')
+
+  const submitHandler = (e) => {
+    e.preventDefault()
+    if (keyword.trim()) {
+      history.push(`/search/${keyword}`)
+    } else {
+      history.push('/')
+    }
+  }
     return (
         <header>
       <Navbar bg="dark" variant="dark">
@@ -29,8 +39,8 @@ function NavBar( props) {
       <Nav.Link ><Link to="/WomenClothing">בגדי נשים</Link></Nav.Link>
       </Nav>
       <Form inline>
-      <FormControl type="text" placeholder="Search" className="mr-sm-2" onClick={Search} />
-      <Button variant="outline-info">Search</Button>
+      <FormControl type="text" placeholder="Search" className="mr-sm-2" onChange={(e) => setKeyword(e.target.value)} />
+      <Button type='submit' variant="outline-info" onSubmit={submitHandler}>Search</Button>
       </Form>
       </Navbar>
            <Button variant="primary" size="lg" active><Link to="/admin">הוסף מוצר</Link></Button>
