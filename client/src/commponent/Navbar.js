@@ -22,43 +22,45 @@ function NavBar( props) {
             <h1 class="heading-primary">
                 <div class="heading-primary-main">GiveItOn</div>
                 <div class="heading-primary-sab">give and let life happen</div>
- 
             </h1>
-            <Button variant="primary" size="lg" active>
-                     Primary button
-               </Button>
-           <div class="btn btn-white btn-animted"><Link to="/admin">הוסף מוצר</Link> </div>
-           </div>
-            <nav>
-              <Nav variant="pills" defaultActiveKey="/home">
-               <Nav.Item>
-                 <Nav.Link href="/home">Active</Nav.Link>
-              </Nav.Item>
-                <Nav.Item>
-               <Nav.Link eventKey="link-1">Option 2</Nav.Link>
-                   </Nav.Item>
-               <Nav.Item>
-                <Nav.Link eventKey="disabled" disabled>
-                         Disabled
-                             </Nav.Link>
-                       </Nav.Item>
-                        </Nav>
-            <ul>
-            <li className="active"><Link to="/">עמוד הבית</Link></li>
-             <li><Link to="/WomenClothing">בגדי נשים</Link></li>
-             <li><Link to="/MenClothing">בגדי גברים</Link></li>
-             <li><Link to="/food">אוכל</Link></li>
-             <li><Link to="/login">הרשם</Link></li>
-             <li className="cart"><Link to= "/cart">
-             <ion-icon name="basket"></ion-icon> סל המוצרים 
-             {/* <span> {props.basketProps.basketNumbers} </span> */}
-             <li> <a href="#"><span className="glyphicon glyphicon-search"></span></a> </li>
-             </Link>
-            </li>
-           </ul>
-            </nav>
+        <Button variant="primary" size="lg" active><Link to="/admin">הוסף מוצר</Link></Button>
+          <div class="btn btn-white btn-animted"> </div>
+          </div>
+          <Nav variant="pills" defaultActiveKey="/home">
+         <Nav.Item>
+         <Nav.Link ><Link to="/">עמוד הבית</Link>Active</Nav.Link>
+        </Nav.Item>
+         <Nav.Item>
+        <Nav.Link eventKey="link-1"><Link to="/login">הרשם</Link></Nav.Link>
+        </Nav.Item>
+        <Nav.Item>
+         <Nav.Link eventKey="link-2" disabled><Link to= "/cart">
+         <ion-icon name="basket"></ion-icon> סל המוצרים 
+           <a href="#"><span className="glyphicon glyphicon-search"></span></a> 
+           </Link> </Nav.Link>
+           </Nav.Item>
+           </Nav>
+
       </header>
     );
 }
   
   export default NavBar;
+
+
+
+//   <nav>
+//   <ul>
+//   <li className="active"><Link to="/">עמוד הבית</Link></li>
+//    <li><Link to="/WomenClothing">בגדי נשים</Link></li>
+//    <li><Link to="/MenClothing">בגדי גברים</Link></li>
+//    <li><Link to="/food">אוכל</Link></li>
+//    <li><Link to="/login">הרשם</Link></li>
+//    <li className="cart"><Link to= "/cart">
+//    <ion-icon name="basket"></ion-icon> סל המוצרים 
+//    <span> {props.basketProps.basketNumbers} </span> */}
+//     <li> <a href="#"><span className="glyphicon glyphicon-search"></span></a> </li>
+//    </Link>
+//   </li>
+//  </ul>
+//   </nav>
