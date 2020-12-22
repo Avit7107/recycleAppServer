@@ -34,7 +34,6 @@ header {
     left: 0;
     z-index: 2;
     display: flex;
-    flex-wrap: wrap;
     justify-content:center;
   }
   
@@ -59,13 +58,4 @@ header {
   opacity: 1;
   padding: 10px;
   text-decoration: none;
-}
-.header{
-  height: 95vh;
-  background-image: linear-gradient(to right bottom,#7ed56fbb,#28b4859a),url(./img/hero.jpg);
-  background-size: cover;
-  background-position: top;
-  position: relative;
-
-  clip-path: polygon(0 0, 100% 0,100% 75vh,0 100% );
 }
