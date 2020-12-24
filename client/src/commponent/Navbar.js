@@ -7,8 +7,7 @@ import { getNumbers } from '../actions/getAction';
 import { Link} from 'react-router-dom';
 import { RemoveItemFromCart, AddItemToCart, SetExistingCart} from '../actions/cartAction';
 import { useDispatch, useSelector } from "react-redux";
-import Search from './search'
-import './navbar.css'
+import Search from './search';
 
 
 
