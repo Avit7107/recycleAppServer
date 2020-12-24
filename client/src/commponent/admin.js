@@ -51,7 +51,7 @@ const Admin = () => {
       <Navbar />
 
       <h1 style={{ padding: "5rem 0" }} className='mx-3'>
-        manager screen{" "}
+        הוספת ועריכת מוצרים{" "}
       </h1>
       <Form inline className='mb-3 px-3'>
         <FormControl
@@ -72,7 +72,7 @@ const Admin = () => {
           onClick={() => setLgShow(true)}
           variant='outline-info'
         >
-          Add Product
+         הוסף מוצר
         </Button>
         <Button
           variant='outline-info'
@@ -81,7 +81,7 @@ const Admin = () => {
             editable === false && updateProduct(products);
           }}
         >
-          {editable ? "Edit" : "Update"}
+          {editable ? "ערוך" : "עדכן"}
         </Button>
       </Form>
 

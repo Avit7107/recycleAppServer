@@ -77,15 +77,13 @@ const Cart = ({ history }) => {
         onHide={() => setSmShow(false)}
         aria-labelledby='example-modal-sizes-title-sm'
       >
-        <Modal.Header closeButton>
-          <Modal.Title id='example-modal-sizes-title-sm'>
-            Please log in to continue
-          </Modal.Title>
-        </Modal.Header>
+    
+        
         <Modal.Body>
           dont have an account yet ?<Button>create account</Button>
         </Modal.Body>
       </Modal>
+      <Button>לתשלום</Button>
     </div>
   );
 };

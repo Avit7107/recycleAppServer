@@ -3,10 +3,10 @@ import { Navbar,Button ,FormControl,Form,
   Nav} from 'react-bootstrap';
 import { connect } from 'react-redux';
 import "bootstrap/dist/css/bootstrap.min.css";
-import { getNumbers } from '../actions/getAction';
 import { Link} from 'react-router-dom';
 import { RemoveItemFromCart, AddItemToCart, SetExistingCart} from '../actions/cartAction';
 import { useDispatch, useSelector } from "react-redux";
+import { ProductsRequest } from '../actions/productAction';
 import Search from './search';
 
 
@@ -15,9 +15,10 @@ import Search from './search';
 function NavBar({history},props) {
   console.log( props);
   let cartItems = useSelector((state) => state.cartReducer.cartItems);
+  const products = useSelector((state) => state.productReducer.products);
   const [keyword, setKeyword] = useState('')
   const [search, setSearch] = useState("");
-  const [products, setProducts] = useState("")
+
 
   const submitHandler = (e) => {
     e.preventDefault()
