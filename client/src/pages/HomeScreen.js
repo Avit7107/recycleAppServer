@@ -66,7 +66,7 @@ const HomeScreen = ({ match }) => {
   </Row>
   <SettingAdmin/>
   <Button variant="primary" size="lg" active><Link to="/admin">הוסף מוצר</Link></Button>
-   <div class="btn btn-white btn-animted"> </div>
+  
   </div>
   )
 }

@@ -48,7 +48,6 @@ const Admin = () => {
 
   return (
     <div>
-      <Navbar />
 
       <h1 style={{ padding: "5rem 0" }} className='mx-3'>
         הוספת ועריכת מוצרים{" "}
@@ -251,9 +250,9 @@ const Admin = () => {
                             });
                           }}
                         >
-                          <option>living_room</option>
-                          <option>kitchen</option>
-                          <option>bedroom</option>
+                          <option>WomenClothing</option>
+                          <option>MenClothing</option>
+                          <option>food</option>
                         </Form.Control>
                       </Form.Group>
                     </Form>
@@ -311,7 +310,7 @@ const Admin = () => {
                     </Button>
                   </td>
                 </tr>
-                // <h1>{product.name}</h1>
+               
               ))}
         </tbody>
       </Table>
@@ -395,7 +394,7 @@ const Admin = () => {
               });
             }}
           >
-            Add product
+            הוסף מוצר
           </Button>
         </Modal.Footer>
       </Modal>
