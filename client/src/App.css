@@ -11,12 +11,9 @@ body{
   font-weight: 400;
   font-size: 16px;
   line-height: 1.7;
-  color: #a7a3a3;
+  color: #ece38d;
   padding: 30px;
 }
-
-
-
 
 .header {
   background-image: url('./images/cover.jpg');
@@ -26,18 +23,6 @@ body{
   height: 150px;
   position: relative;
 }
-
-  nav {
-    position: absolute;
-    top: 0;
-    right: 0;
-    left: 0;
-    z-index: 2;
-    display: flex;
-    justify-content:center;
-    float:right;
-    align-content: center;
-  }
   
 
    .cart ion-icon {

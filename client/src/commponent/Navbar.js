@@ -17,7 +17,7 @@ function NavBar({history},props) {
   let cartItems = useSelector((state) => state.cartReducer.cartItems);
   const [keyword, setKeyword] = useState('')
   const [search, setSearch] = useState("");
-  const [products, setProducts] = useState(initialProducts)
+  const [products, setProducts] = useState("")
 
   const submitHandler = (e) => {
     e.preventDefault()
@@ -37,7 +37,6 @@ function NavBar({history},props) {
          <ion-icon name="basket"></ion-icon> סל המוצרים 
            <a href="#"><span className="glyphicon glyphicon-search"></span></a> 
            </Link></Nav.Link>
-      <Nav.Link ><Link to="/WomenClothing">בגדי נשים</Link></Nav.Link>
       </Nav>
       <Form inline>
       <FormControl type="text" placeholder="Search" className="mr-sm-2" onChange={(e) => setKeyword(e.target.value)} />
