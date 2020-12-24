@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import Navbar from './commponent/Navbar';
+import Header from './commponent/header';
 import { Provider } from 'react-redux'; 
 import store from './store';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
@@ -32,6 +33,7 @@ function App() {
     <Provider store={store}>
     <div className="App">
       <BrowserRouter>
+      <Header/>
       <Navbar/>
       <Route  exact path="/" component={ HomeScreen }/>
       <Route exact path="/product" component={Product}/>

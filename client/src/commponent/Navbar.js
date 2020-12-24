@@ -16,6 +16,8 @@ function NavBar({history},props) {
   console.log( props);
   let cartItems = useSelector((state) => state.cartReducer.cartItems);
   const [keyword, setKeyword] = useState('')
+  const [search, setSearch] = useState("");
+  const [products, setProducts] = useState(initialProducts)
 
   const submitHandler = (e) => {
     e.preventDefault()
@@ -42,8 +44,7 @@ function NavBar({history},props) {
       <Button type='submit' variant="outline-info" onSubmit={submitHandler}>Search</Button>
       </Form>
       </Navbar>
-           <Button variant="primary" size="lg" active><Link to="/admin">הוסף מוצר</Link></Button>
-           <div class="btn btn-white btn-animted"> </div>
+
       </header>
     );
 }
