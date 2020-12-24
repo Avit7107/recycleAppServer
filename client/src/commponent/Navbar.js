@@ -13,7 +13,7 @@ import './navbar.css'
 
 
 
-function NavBar({history}) {
+function NavBar({history},props) {
   console.log( props);
   let cartItems = useSelector((state) => state.cartReducer.cartItems);
   const [keyword, setKeyword] = useState('')
